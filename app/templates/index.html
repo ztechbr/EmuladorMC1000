@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>CCE MC-1000 Python</title>
+  <link rel="stylesheet" href="/static/css/app.css">
+</head>
+<body>
+<main>
+  <h1>CCE MC-1000</h1>
+  <p class="sub">ROM original executada por hardware recodificado em Python 3 + Flask</p>
+
+  <div class="tv" id="display" tabindex="0" aria-label="Tela e teclado do MC-1000">
+    <pre id="screen"></pre>
+    <canvas id="gfx" width="256" height="192"></canvas>
+  </div>
+  <div class="status"><span id="mode">TEXT</span><span id="tape">FITA STOP</span><span id="sound">ÁUDIO OFF</span></div>
+
+  <div class="toolbar">
+    <button id="reset">RESET</button>
+    <button id="audio">ATIVAR ÁUDIO</button>
+    <button id="rec">REC WAV</button>
+    <button id="stoprec">STOP/SAVE WAV</button>
+    <label>LOAD WAV<input id="wav" type="file" accept="audio/wav,.wav"></label>
+    <button id="printer">BAIXAR IMPRESSORA</button>
+  </div>
+
+  <div class="paste">
+    <input id="type" placeholder="Digite ou cole BASIC aqui" autocomplete="off" spellcheck="false">
+    <button id="send">Enviar</button>
+  </div>
+  <p class="hint">Clique na tela e use o teclado físico. SHIFT + letras mantém os atalhos originais do MC-1000.</p>
+
+  <details>
+    <summary>Estado da CPU</summary>
+    <pre id="cpu"></pre>
+  </details>
+</main>
+<script src="/static/js/app.js"></script>
+</body>
+</html>
